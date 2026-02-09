@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Site</title>
+</head>
+<body>
+    <h1 style="color: darkmagenta; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 30px ; "  ><img src="logo.png" alt="Image" height="40px" > PARASAM </h1>
+<br>
+<button onclick="window.location.href='Panier.html'" style="position:absolute; top:15px; right:120px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Panier</button>
+<button onclick="window.location.href='Produits.html'" style="position:absolute; top:15px; right:230px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Produits</button>
+<button onclick="window.location.href='À Propos.html'" style="position:absolute; top:15px; right:350px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">À Propos</button>
+<button onclick="window.location.href='contact.html'" style="position:absolute; top:15px; right:470px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Contact</button>
+<button onclick="window.location.href='index.html'" style="position:absolute; top:15px; right:590px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Accueil</button>
+
+<style>body { background-image: url('rose.webp'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;
+ background-attachment: fixed; }</style>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px;">
+
+<div class="produit-parfum">
+    <img src="scandal.webp" alt="Parfum Scandal" style="width:200px; height:200px; border-radius:10px;">
+    <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Scandal</h3>
+    <p style="font-size:20px; color:#333; margin:10px 0;">39.900DT</p>
+    <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+            onclick="ajouterArticleAuPanier('Scandal', 39.900, 'scandal.webp')">
+        Ajouter au panier
+    </button>
+</div>
+
+<div class="produit-parfum">
+    <img src="Parfum Narciso.webp" alt="Parfum Narciso" style="width:200px; height:200px; border-radius:10px;">
+    <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Narciso</h3>
+    <p style="font-size:20px; color:#333; margin:10px 0;">42.500DT</p>
+    <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+            onclick="ajouterArticleAuPanier('Narciso', 42.500, 'Parfum Narciso.webp')">
+        Ajouter au panier
+    </button>
+</div>
+
+    <div class="produit-parfum">
+        <img src="Parfum J adore.webp" alt="Parfum J'adore" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">J'adore</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">45.200DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Parfum J adore', 45.200)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="si.webp" alt="Parfum Si" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Si</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">38.700DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Si', 38.700)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="angel.webp" alt="Parfum Angel" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Angel</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">41.300DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Angel', 41.300)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <!-- Deuxième ligne -->
+    <div class="produit-parfum">
+        <img src="linterdit.webp" alt="Parfum L'Interdit" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">L'Interdit</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">47.800DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('L Interdit', 47.800)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="la vie est belle.webp" alt="Parfum La Vie Est Belle" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">La Vie Est Belle</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">44.600DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('La Vie Est Belle', 44.600)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="cocomademoiselle.webp" alt="Parfum Coco Mademoiselle" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Coco Mademoiselle</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">49.900DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Coco Mademoiselle', 49.900)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="blackopium.webp" alt="Parfum Black Opium" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Black Opium</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">43.200DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Black Opium', 43.200)">
+            Ajouter au panier
+        </button>
+    </div>
+
+    <div class="produit-parfum">
+        <img src="idole.webp" alt="Parfum Idole" style="width:200px; height:200px; border-radius:10px;">
+        <h3 style="color:darkmagenta; font-family:'Times New Roman'; margin:10px 0;">Idole</h3>
+        <p style="font-size:20px; color:#333; margin:10px 0;">40.800DT</p>
+        <button style="background:linear-gradient(135deg, darkmagenta, #8b008b); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer; font-size:16px;" 
+                onclick="ajouterAuPanier('Idole', 40.800)">
+            Ajouter au panier
+        </button>
+    </div>
+
+</div>
+
+
+
+
+
+ </body>
+</html>

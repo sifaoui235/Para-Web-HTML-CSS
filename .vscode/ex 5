@@ -1,0 +1,27 @@
+<ol type="I">
+     <li> introduction a l'algorithmique <li>
+         <ol type="1">
+             <li> definition </li>
+             <li> variable </li>
+             <li> instruction </li>
+                  <ul>
+                     <li> afficher </li>
+                     <li> saisir </li>
+                     <li> affecter </li>
+                  <ul>
+         <ol>
+     <li> les structures de controles <li>
+        <ol type="1">
+             <li> les structures conditionnelles </li>
+                  <ul>
+                     <li> si </li>
+                     <li> selon </li>
+                  <ul>
+             <li> les boucles </li>
+                  <ul>
+                     <li> pour </li>
+                     <li> tant que </li>
+                     <li> repeter </li>
+                  <ul>
+         <ol>
+<ol>

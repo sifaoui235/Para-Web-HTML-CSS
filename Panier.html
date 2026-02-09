@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Site</title>
+</head>
+<body>
+    <h1 style="color: darkmagenta; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 30px ; "  ><img src="logo.png" alt="Image" height="40px" > PARASAM </h1>
+<br>
+<button onclick="window.location.href='Panier.html'" style="position:absolute; top:15px; right:120px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Panier</button>
+<button onclick="window.location.href='Produits.html'" style="position:absolute; top:15px; right:230px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Produits</button>
+<button onclick="window.location.href='À Propos.html'" style="position:absolute; top:15px; right:350px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">À Propos</button>
+<button onclick="window.location.href='contact.html'" style="position:absolute; top:15px; right:470px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Contact</button>
+<button onclick="window.location.href='index.html'" style="position:absolute; top:15px; right:590px; background-color:rgb(156, 63, 156); color:white; 
+border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Accueil</button>
+
+<style>body { background-image: url('rose.webp'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;
+ background-attachment: fixed; }</style>
+
+    <h2 style="text-align:center; color:darkmagenta; font-family:'Times New Roman'; margin-top:50px;">Mon Panier</h2>
+    
+    <div id="contenuPanier" style="max-width:600px; margin:20px auto; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <p style="text-align:center; color:#666;">Votre panier est vide</p>
+    </div>
+
+    <div id="totalPanier" style="text-align:center; font-size:20px; color:darkmagenta; font-weight:bold; margin:20px;">
+        Total: 0 DT
+    </div>
+
+    <div style="text-align:center;">
+        <button onclick="viderPanier()" style="background-color:darkmagenta; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; margin:5px;">
+            Vider le panier
+        </button>
+        <button onclick="commander()" style="background-color:darkmagenta; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; margin:5px;">
+            Commander
+        </button>
+    </div>
+
+    <script>
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        let total = 0;
+
+        function afficherPanier() {
+            const contenuPanier = document.getElementById('contenuPanier');
+            const totalPanier = document.getElementById('totalPanier');
+            
+            if (panier.length === 0) {
+                contenuPanier.innerHTML = '<p style="text-align:center; color:#666;">Votre panier est vide</p>';
+                totalPanier.textContent = 'Total: 0 DT';
+                return;
+            }
+
+            contenuPanier.innerHTML = '';
+            total = 0;
+
+            panier.forEach((article, index) => {
+                total += article.prix;
+                contenuPanier.innerHTML += `
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:10px; border-bottom:1px solid #eee;">
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <img src="${article.image}" alt="${article.nom}" width="50" style="border-radius:5px;">
+                            <span>${article.nom}</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:15px;">
+                            <span>${article.prix} DT</span>
+                            <button onclick="supprimerArticle(${index})" style="background-color:#ff4444; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">
+                                Supprimer
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            totalPanier.textContent = `Total: ${total.toFixed(3)} DT`;
+        }
+
+        function ajouteraupanier(nom, prix, image) {
+            panier.push({ nom, prix: parseFloat(prix), image });
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
+
+        function supprimerArticle(index) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
+
+        function viderPanier() {
+            panier = [];
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherPanier();
+        }
+
+        function commander() {
+            if (panier.length === 0) {
+                alert('Votre panier est vide !');
+                return;
+            }
+            alert('Commande passée avec succès ! Total: ' + total.toFixed(3) + ' DT');
+            viderPanier();
+        }
+
+        // Afficher le panier au chargement de la page
+        afficherPanier();
+    </script>
+</body>
+</html>
+
+</body>
+</html>
